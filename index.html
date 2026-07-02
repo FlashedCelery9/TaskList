@@ -1,10 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Task Notebook</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/modal.css">
 </head>
 <body>
-$END$
+
+<h1>Записник задач</h1>
+
+<!-- 🔥 НОВЕ ПОЛЕ ДЛЯ ВВОДУ НАЗВИ ЗАДАЧІ -->
+<input type="text" id="taskInput" placeholder="Введіть назву задачі..." class="task-input">
+
+<button id="addTaskbtn">AddTask</button>
+
+<div class="tasks">
+    <!-- твої картки як були -->
+    <div class="task-card">
+        <div class="task-status done">Виконано</div>
+        <div class="task-title">Зробити дизайн записника</div>
+        <div class="task-desc">
+            Створити базовий HTML + CSS з градієнтами, скляними картками та красивим UI.
+        </div>
+        <button class="edit-btn">Редагувати</button>
+    </div>
+
+    <div class="task-card">
+        <div class="task-status not-done">Не виконано</div>
+        <div class="task-title">Підключити Jikan API</div>
+        <div class="task-desc">
+            Реалізувати отримання топ аніме та манги для AnimeLibrary.
+        </div>
+        <button class="edit-btn">Редагувати</button>
+    </div>
+
+    <div class="task-card">
+        <div class="task-status progress">В процесі</div>
+        <div class="task-title">Додати JS логіку</div>
+        <div class="task-desc">
+            Реалізувати додавання задач, зміну статусу та збереження у localStorage.
+        </div>
+        <button class="edit-btn">Редагувати</button>
+    </div>
+</div>
+
+<div id="modal" class="modal-overlay"></div>
+
+<script src="js/script.js"></script>
 </body>
 </html>

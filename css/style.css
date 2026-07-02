@@ -1,0 +1,189 @@
+/* ------------------------------
+   Глобальні стилі + фон
+--------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", system-ui, sans-serif;
+    min-height: 100vh;
+    padding: 40px 20px;
+
+    background:
+            radial-gradient(circle at 20% 20%, rgba(14,165,233,0.45), transparent 60%),
+            radial-gradient(circle at 80% 80%, rgba(139,92,246,0.45), transparent 60%),
+            linear-gradient(135deg, #0f172a, #1e293b, #334155);
+    background-size: 200% 200%;
+    animation: bgFlow 14s ease infinite;
+
+    color: #e2e8f0;
+}
+
+@keyframes bgFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+h1 {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 40px;
+    background: linear-gradient(120deg, #38bdf8, #818cf8, #c084fc);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* ------------------------------
+   Контейнер задач
+--------------------------------*/
+.tasks {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    gap: 25px;
+}
+
+/* ------------------------------
+   Картка задачі (glassmorphism)
+--------------------------------*/
+.task-card {
+    padding: 25px;
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+
+    position: relative;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.task-card:hover {
+    transform: translateY(-6px);
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+}
+
+/* ------------------------------
+   Статуси
+--------------------------------*/
+.task-status {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 8px;
+    display: inline-block;
+    margin-bottom: 12px;
+    color: #0f172a;
+}
+
+/* Виконано — зелений градієнт */
+.task-status.done {
+    background: linear-gradient(120deg, #4ade80, #22c55e, #16a34a);
+    cursor: pointer;
+}
+
+/* Не виконано — червоний градієнт */
+.task-status.not-done {
+    background: linear-gradient(120deg, #f87171, #ef4444, #dc2626);
+    cursor: pointer;
+
+}
+
+/* В процесі — синьо‑фіолетовий */
+.task-status.progress {
+    background: linear-gradient(120deg, #38bdf8, #818cf8);
+    cursor: pointer;
+
+}
+
+/* ------------------------------
+   Текст
+--------------------------------*/
+.task-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.task-desc {
+    font-size: 16px;
+    line-height: 1.5;
+    opacity: 0.85;
+}
+
+/* ------------------------------
+   Кнопка редагування
+--------------------------------*/
+.edit-btn {
+    position: relative;
+    margin-top: 25px;
+    bottom: 15px;
+    left: 15px;
+
+    padding: 8px 14px;
+    font-size: 14px;
+    font-weight: 600;
+
+    border: none;
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(8px);
+    color: #e2e8f0;
+
+    cursor: pointer;
+
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.edit-btn:hover {
+    background: rgba(255, 255, 255, 0.28);
+    transform: scale(1.05);
+}
+
+/* 🔥 Поле вводу задачі */
+.task-input {
+    width: 300px;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    border: none;
+
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(10px);
+    color: #e2e8f0;
+
+    font-size: 16px;
+    outline: none;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* 🔥 Кнопка AddTask */
+#addTaskbtn {
+    padding: 12px 20px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+
+    background: linear-gradient(120deg, #38bdf8, #818cf8, #c084fc);
+    color: #0f172a;
+    font-weight: 600;
+    font-size: 16px;
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#addTaskbtn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
